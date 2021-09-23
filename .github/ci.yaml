@@ -1,0 +1,26 @@
+name: Build Release
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      - name: Build step
+        run: |
+          GOOS=windows GOARCH=amd64 go build -o discord-markov-chain-windows-amd64.exe
+          GOOS=linux   GOARCH=amd64 go build -o discord-markov-chain-linux-amd64
+          GOOS=darwin  GOARCH=amd64 go build -o discord-markov-chain-macos-amd64
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "discord-markov-chain-*"
+          commit: main
+          tag: 1.0
+          name: discord markov chain 1.0
+          token: ${{ secrets.GITHUB_TOKEN }}
