@@ -37,33 +37,6 @@ func main() {
 	order := 1
 	chain := polo.NewFromText(order, messages)
 
-	/*
-		fmt.Println("Press enter for the next generated message")
-		fmt.Println("	You can also enter a starting word")
-		fmt.Println("	Type 'quit' to quit")
-		rl, err := readline.New("> ")
-		if err != nil {
-			panic(err)
-		}
-		defer rl.Close()
-		in := ""
-		for {
-			in, err = rl.ReadlineWithDefault(in)
-			if err != nil {
-				fmt.Println(err)
-				return
-			}
-			if in == "quit" {
-				return
-			}
-			fmt.Print("< ")
-			if in == "" {
-				fmt.Println(chain.NextUntilEnd(chain.RandomState()))
-			} else {
-				fmt.Println(chain.NextUntilEnd(in))
-			}
-		}
-	*/
 	web(chain)
 }
 
