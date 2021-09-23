@@ -5,7 +5,7 @@ A markov chain for Discord message dumps using https://github.com/fr3fou/polo
 ## Download
 
 If you have a `go` installed, just clone the repo or `go install github.com/fr3fou/discord-markov-chain@latest`
-Otherwise, download a binary from the Releases section
+Otherwise, download a binary from the [Releases section](https://github.com/fr3fou/discord-markov-chain/releases)
 
 ## Usage
 
