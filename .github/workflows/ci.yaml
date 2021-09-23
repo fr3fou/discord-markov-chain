@@ -22,5 +22,5 @@ jobs:
           artifacts: "discord-markov-chain-*"
           commit: main
           tag: 1.0
-          name: discord markov chain 1.0
+          name: Discord Markov Chain 1.0
           token: ${{ secrets.GITHUB_TOKEN }}
