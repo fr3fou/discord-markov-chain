@@ -25,10 +25,12 @@ func main() {
 		panic(err)
 	}
 
+	log.Println("parsing dump.json")
 	var d DM
 	if err := json.NewDecoder(f).Decode(&d); err != nil {
 		panic(err)
 	}
+	f.Close()
 	messages := []string{}
 	for _, message := range d.Messages {
 		messages = append(messages, message.Content)
@@ -36,6 +38,7 @@ func main() {
 
 	order := 1
 	chain := polo.NewFromText(order, messages)
+	log.Println("finished building chain")
 
 	web(chain)
 }
