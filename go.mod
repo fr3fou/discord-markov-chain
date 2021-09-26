@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e
-	github.com/fr3fou/polo v0.0.0-20210923145418-37acb349e876
+	github.com/fr3fou/polo v0.0.0-20210926093236-0d25eb55cb6b
 )
 
 require (
