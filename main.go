@@ -33,6 +33,9 @@ func main() {
 	f.Close()
 	messages := []string{}
 	for _, message := range d.Messages {
+		if message.Content == "" {
+			continue
+		}
 		messages = append(messages, message.Content)
 	}
 
